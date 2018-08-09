@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vuetify Toast Snackbar Demo</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <style>
+    body { padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <h1>Vuetify Toast Snackbar Demo</h1>
+        <v-btn @click="success('Hello')" color="primary">Show 'hello'</v-btn>
+        <v-btn @click="error('Error')" color="primary">Show 'error'</v-btn>
+        <v-btn @click="showToast('This is an information.', {timeout: 10000, icon: 'info'})" color="primary">Show toast for 10 sec</v-btn>
+        <br>
+        <br>
+        <pre>
+          this.$toast.success('Hello');
+
+          this.$toast.error('Error');
+
+          this.$toast('This is an information.', {
+            timeout: 10000,
+            icon: 'info'
+          });
+        </pre>
+        <br>
+        <br>
+        Documentation: <a href="https://github.com/eolant/vuetify-toast-snackbar">https://github.com/eolant/vuetify-toast-snackbar</a>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script src="https://unpkg.com/vuetify-toast-snackbar"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      methods: {
+        success: function(text) {
+          this.$toast.success(text);
+        },
+        error: function(text) {
+          this.$toast.error(text);
+        },
+        showToast: function(text, opt) {
+          this.$toast.show(text, opt);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
