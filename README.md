@@ -48,5 +48,5 @@ this.$toast('Custom options', {
 	dismissable: true
 })
 
-this.$toast.purple('Custom short')
+this.$toast.custom('Custom short')
 ```

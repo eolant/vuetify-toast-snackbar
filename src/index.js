@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Toast from './Toast.vue'
 
 function init(Vue, options = {}) {
@@ -46,6 +45,10 @@ function init(Vue, options = {}) {
     options,
     ...shorts(options)
   })
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(init)
 }
 
 export default init

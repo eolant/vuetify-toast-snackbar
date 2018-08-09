@@ -1,6 +1,6 @@
 {
   "name": "vuetify-toast-snackbar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple toast service based on vuetify snackbar component.",
   "author": "eolant",
   "license": "MIT",
@@ -28,6 +28,11 @@
     "lint:fix": "npm run lint -- --fix",
     "prepublish": "npm run build"
   },
+  "keywords": [
+    "vuetify",
+    "toast",
+    "snackbar"
+  ],
   "devDependencies": {
     "bili": "^1.5.8",
     "eslint": "^4.15.0",
