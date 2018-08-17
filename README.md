@@ -1,6 +1,6 @@
 # Vuetify Toast Snackbar
 
-> Simple toast service based on [vuetify](https://github.com/vuetifyjs/vuetify) snackbar component.
+> Basic Vue toast service that uses [Vuetify](https://github.com/vuetifyjs/vuetify) Snackbar component.
 > Inspired by https://github.com/pzs/vuetify-toast
 
 ## Installation
