@@ -24,8 +24,16 @@ export interface VuetifyToastObject {
   shorts? : any
 }
 
+interface VuetifyToastShow {
+  (message: string, options?: VuetifyToastObject): void
+}
+
+interface VuetifyToastMethods extends VuetifyToastShow {
+  [key: string]: VuetifyToastShow
+}
+
 declare module 'vue/types/vue' {
   interface Vue {
-    $toast(message: string, options?: VuetifyToastObject): void
+    $toast: VuetifyToastMethods
   }
 }
