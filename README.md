@@ -37,8 +37,29 @@ Vue.use(VuetifyToast, {
 	},
 	property: '$toast' // default
 })
+```
 
-// In the component
+### Nuxt.js
+
+Update `plugins/vuetify.js`
+
+```js
+import Vue from 'vue'
+import Vuetify, { VSnackbar } from 'vuetify/lib'
+import VuetifyToast from 'vuetify-toast-snackbar'
+
+Vue.use(Vuetify, {
+  components: {
+    VSnackbar
+  }
+})
+
+Vue.use(VuetifyToast)
+```
+
+### Call
+
+```js
 this.$toast('Default toast')
 
 this.$toast.info('Info toast')
