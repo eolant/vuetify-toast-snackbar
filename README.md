@@ -30,6 +30,7 @@ Vue.use(VuetifyToast, {
 	autoHeight: false, // default
 	multiLine: false, // default
 	vertical: false, // default
+	queueable: false, // default
 	shorts: {
 		custom: {
 			color: 'purple'

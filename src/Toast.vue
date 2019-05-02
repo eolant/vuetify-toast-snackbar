@@ -77,6 +77,12 @@
       this.$nextTick(() => this.show())
     },
 
+    watch: {
+      active: function (isActive, wasActive) {
+        this.$emit('statusChange', isActive, wasActive)
+      }
+    },
+
     methods: {
       show() {
         this.active = true
