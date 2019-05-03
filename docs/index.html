@@ -20,7 +20,9 @@
         <br>
         <br>
         <pre>
-          this.$toast.success('Hello');
+          this.$toast.success('Hello', {
+            queueable: true
+          });
 
           this.$toast.error('Error');
 
@@ -44,7 +46,9 @@
       el: '#app',
       methods: {
         success: function(text) {
-          this.$toast.success(text);
+          this.$toast.success(text, {
+            queueable: true
+          });
         },
         error: function(text) {
           this.$toast.error(text);

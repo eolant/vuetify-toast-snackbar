@@ -1,6 +1,6 @@
 # Vuetify Toast Snackbar
 
-> Basic Vue toast service that uses [Vuetify](https://github.com/vuetifyjs/vuetify) Snackbar component.
+> Basic Vue toast service with queue support that uses [Vuetify](https://github.com/vuetifyjs/vuetify) Snackbar component.
 > Inspired by https://github.com/pzs/vuetify-toast
 
 ## Installation
@@ -67,7 +67,8 @@ this.$toast.info('Info toast')
 
 this.$toast('Custom options', {
 	color: 'green',
-	dismissable: true
+	dismissable: true,
+	queueable: true
 })
 
 this.$toast.custom('Custom short')
