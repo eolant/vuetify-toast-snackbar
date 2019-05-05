@@ -22,7 +22,7 @@
       {{ icon }}
     </v-icon>
 
-    {{ message }}
+    <div v-html="message"></div>
   </v-snackbar>
 </template>
 
