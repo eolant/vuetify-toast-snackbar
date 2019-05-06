@@ -11,6 +11,7 @@
       :vertical = "vertical"
       v-model="active"
       class="application"
+      :class="classes"
       @click="dismiss"
   >
     <v-icon
@@ -42,6 +43,9 @@
         default: 'info'
       },
       icon: {
+        type: String
+      },
+      classes: {
         type: String
       },
       message: {

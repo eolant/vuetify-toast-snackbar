@@ -25,6 +25,7 @@ Vue.use(VuetifyToast, {
 	y: 'bottom', // default
 	color: 'info', // default
 	icon: 'info',
+	classes: 'body-2',
 	timeout: 3000, // default
 	dismissable: true, // default
 	autoHeight: false, // default

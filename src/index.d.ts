@@ -16,6 +16,7 @@ export interface VuetifyToastObject {
   y?: string
   color?: string
   icon?: string
+  classes? : string
   timeout?: number
   dismissable?: boolean
   autoHeight? : boolean
