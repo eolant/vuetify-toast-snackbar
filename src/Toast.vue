@@ -46,7 +46,7 @@
         type: String
       },
       classes: {
-        type: String
+        type: [ String, Object, Array ]
       },
       message: {
         type: String
