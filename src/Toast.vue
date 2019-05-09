@@ -11,6 +11,7 @@
       :vertical = "vertical"
       v-model="active"
       class="application"
+      :class="classes"
       @click="dismiss"
   >
     <v-icon
@@ -43,6 +44,9 @@
       },
       icon: {
         type: String
+      },
+      classes: {
+        type: [ String, Object, Array ]
       },
       message: {
         type: String
