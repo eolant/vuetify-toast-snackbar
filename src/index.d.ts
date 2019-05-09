@@ -22,6 +22,7 @@ export interface VuetifyToastObject {
   autoHeight? : boolean
   multiLine? : boolean
   vertical? : boolean
+  queueable? : boolean
   shorts? : any
 }
 
