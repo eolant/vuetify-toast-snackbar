@@ -23,8 +23,8 @@
   ],
   "scripts": {
     "build": "npm run build:module && npm run build:browser",
-    "build:module": "bili ./src/index.js --format cjs,es",
-    "build:browser": "bili ./src/index.js --format umd,umd-min --module-name vuetifyToast",
+    "build:module": "bili --file-name vuetify-toast-snackbar --format cjs,es",
+    "build:browser": "bili --file-name vuetify-toast-snackbar --format umd,umd-min --module-name vuetifyToast",
     "lint": "eslint --ext js --ext vue src",
     "lint:fix": "npm run lint -- --fix",
     "prepublish": "npm run build"
@@ -35,14 +35,14 @@
     "snackbar"
   ],
   "devDependencies": {
-    "bili": "^3.4.2",
-    "eslint": "^5.11.1",
+    "bili": "^4.7.4",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-vue": "^5.1.0",
-    "rollup-plugin-vue": "^4.3.2",
-    "vue": "^2.5.22",
-    "vue-template-compiler": "^2.5.22"
+    "rollup-plugin-vue": "^5.0.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
   },
   "peerDependencies": {
     "vue": "*",

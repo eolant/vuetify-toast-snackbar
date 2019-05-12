@@ -1,11 +1,12 @@
 module.exports = {
-  name: 'vuetify-toast-snackbar',
-  plugins: ['vue'],
-  global: {
+  plugins: {
+  	vue: true
+  },
+  globals: {
     vue: 'Vue'
   },
   external: ['vue'],
-  postcss: {
-    extract: false
+  output: {
+  	extractCSS: false
   }
 }
