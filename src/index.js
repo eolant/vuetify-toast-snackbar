@@ -1,12 +1,12 @@
 import Toast from './Toast.vue'
 
-function init(Vue, options = {}) {
+function init(Vue, globalOptions = {}) {
   let cmp = null, queue = []
-  const property = options.property || '$toast'
+  const property = globalOptions.property || '$toast'
 
   function createCmp(options) {
     let component = new Vue(Toast)
-    Object.assign(component, Vue.prototype[property].options, options)
+    Object.assign(component, Vue.prototype[property].globalOptions, options)
     document.body.appendChild(component.$mount().$el)
 
     return component
@@ -14,7 +14,9 @@ function init(Vue, options = {}) {
 
   function show(message, options = {}) {
     if (cmp) {
-      if (options.queueable) {
+      let isQueueable = options.queueable !== undefined ? options.queueable : globalOptions.queueable
+
+      if (isQueueable) {
         queue.push({ message, options })
       }
       else {
@@ -58,8 +60,8 @@ function init(Vue, options = {}) {
   }
 
   Vue.prototype[property] = Object.assign(show, {
-    options,
-    ...shorts(options)
+    globalOptions,
+    ...shorts(globalOptions)
   })
 }
 
