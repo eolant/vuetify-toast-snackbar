@@ -34,6 +34,7 @@ Vue.use(VuetifyToast, {
 	multiLine: false, // default
 	vertical: false, // default
 	queueable: false, // default
+	showClose: false, // default
 	shorts: {
 		custom: {
 			color: 'purple'
@@ -49,12 +50,14 @@ Update `plugins/vuetify.js`
 
 ```js
 import Vue from 'vue'
-import Vuetify, { VSnackbar } from 'vuetify/lib'
+import Vuetify, { VSnackbar, VBtn, VIcon } from 'vuetify/lib'
 import VuetifyToast from 'vuetify-toast-snackbar'
 
 Vue.use(Vuetify, {
   components: {
-    VSnackbar
+    VSnackbar,
+    VBtn,
+    VIcon
   }
 })
 

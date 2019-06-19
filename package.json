@@ -1,6 +1,6 @@
 {
   "name": "vuetify-toast-snackbar",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Basic Vue toast service that uses Vuetify Snackbar component.",
   "author": "eolant",
   "license": "MIT",
@@ -9,11 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/eolant/vuetify-toast-snackbar.git"
   },
-  "main": "dist/vuetify-toast-snackbar.cjs.js",
-  "module": "dist/vuetify-toast-snackbar.m.js",
-  "browser": "dist/vuetify-toast-snackbar.js",
-  "cdn": "dist/vuetify-toast-snackbar.min.js",
-  "unpkg": "dist/vuetify-toast-snackbar.min.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "cdn": "dist/index.umd.min.js",
+  "unpkg": "dist/index.umd.min.js",
   "types": "src/index.d.ts",
   "files": [
     "dist",
@@ -23,8 +23,8 @@
   ],
   "scripts": {
     "build": "npm run build:module && npm run build:browser",
-    "build:module": "bili --file-name vuetify-toast-snackbar --format cjs,es",
-    "build:browser": "bili --file-name vuetify-toast-snackbar --format umd,umd-min --module-name vuetifyToast",
+    "build:module": "bili --format cjs --format es",
+    "build:browser": "bili --format umd --format umd-min --module-name vuetifyToast",
     "lint": "eslint --ext js --ext vue src",
     "lint:fix": "npm run lint -- --fix",
     "prepublish": "npm run build"
@@ -35,7 +35,7 @@
     "snackbar"
   ],
   "devDependencies": {
-    "bili": "^4.7.4",
+    "bili": "^4.8.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",

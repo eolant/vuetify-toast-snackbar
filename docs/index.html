@@ -16,7 +16,7 @@
         <h1>Vuetify Toast Snackbar Demo</h1>
         <v-btn @click="success('Hello')" color="primary">Show 'hello'</v-btn>
         <v-btn @click="error('Error')" color="primary">Show 'error'</v-btn>
-        <v-btn @click="showToast('This is an information.', {timeout: 10000, icon: 'info'})" color="primary">Show toast for 10 sec</v-btn>
+        <v-btn @click="showToast('This is an information.', { timeout: 10000, icon: 'info', dismissable: false, showClose: true })" color="primary">Show toast for 10 sec</v-btn>
         <br>
         <br>
         <pre>
@@ -28,7 +28,9 @@
 
           this.$toast('This is an information.', {
             timeout: 10000,
-            icon: 'info'
+            icon: 'info',
+            dismissable: false,
+            showClose: true
           });
         </pre>
         <br>
