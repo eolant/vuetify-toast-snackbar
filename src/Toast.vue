@@ -120,6 +120,11 @@ export default {
 </script>
 
 <style>
+  .vts__snackbar {
+    max-width: none !important;
+    width: auto !important;
+  }
+
   .vts__snackbar .v-snack__content {
     justify-content: flex-start;
   }
