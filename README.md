@@ -44,7 +44,7 @@ Vue.use(VuetifyToast, {
 })
 ```
 
-### Nuxt.js
+### Vue loader (e.g. Nuxt.js)
 
 Update `plugins/vuetify.js`
 
