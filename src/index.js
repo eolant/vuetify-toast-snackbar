@@ -7,7 +7,7 @@ function init(Vue, globalOptions = {}) {
   function createCmp(options) {
     let component = new Vue(Toast)
     Object.assign(component, Vue.prototype[property].globalOptions, options)
-    document.body.appendChild(component.$mount().$el)
+    document.querySelector('.application, .v-application').appendChild(cmp.$mount().$el)
 
     return component
   }
