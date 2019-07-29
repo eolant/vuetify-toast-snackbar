@@ -10,7 +10,7 @@
     :multi-line = "multiLine"
     :vertical = "vertical"
     v-model="active"
-    class="application vts__snackbar"
+    class="v-application vts__snackbar"
     :class="classes"
     @click="dismiss"
   >
