@@ -6,7 +6,6 @@
     :top="y === 'top'"
     :left="x === 'left'"
     :right="x === 'right'"
-    :auto-height = "autoHeight"
     :multi-line = "multiLine"
     :vertical = "vertical"
     v-model="active"
@@ -68,10 +67,6 @@ export default {
     dismissable: {
       type: Boolean,
       default: true
-    },
-    autoHeight: {
-      type: Boolean,
-      default: false
     },
     multiLine: {
       type: Boolean,
