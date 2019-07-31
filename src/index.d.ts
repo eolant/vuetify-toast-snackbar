@@ -19,7 +19,6 @@ export interface VuetifyToastObject {
   classes?: string | object | Array<object | string>
   timeout?: number
   dismissable?: boolean
-  autoHeight?: boolean
   multiLine?: boolean
   vertical?: boolean
   showClose?: boolean

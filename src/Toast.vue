@@ -6,7 +6,6 @@
     :top="y === 'top'"
     :left="x === 'left'"
     :right="x === 'right'"
-    :auto-height = "autoHeight"
     :multi-line = "multiLine"
     :vertical = "vertical"
     v-model="active"
@@ -26,10 +25,9 @@
     <div class="vts__snackbar__message" v-html="message"></div>
 
     <v-btn
-      flat
       icon
       class="vts__snackbar__close"
-      v-if="!!showClose"
+      v-if="showClose"
       @click="close"
     >
       <v-icon>close</v-icon>
@@ -68,10 +66,6 @@ export default {
     dismissable: {
       type: Boolean,
       default: true
-    },
-    autoHeight: {
-      type: Boolean,
-      default: false
     },
     multiLine: {
       type: Boolean,

@@ -30,7 +30,6 @@ Vue.use(VuetifyToast, {
 	],
 	timeout: 3000, // default
 	dismissable: true, // default
-	autoHeight: false, // default
 	multiLine: false, // default
 	vertical: false, // default
 	queueable: false, // default
