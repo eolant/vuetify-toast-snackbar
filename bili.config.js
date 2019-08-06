@@ -8,5 +8,6 @@ module.exports = {
   external: ['vue'],
   output: {
   	extractCSS: false
-  }
+  },
+  bundleNodeModules: true
 }
