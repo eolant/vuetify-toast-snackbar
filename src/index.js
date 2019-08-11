@@ -59,8 +59,13 @@ function init(Vue, globalOptions = {}) {
     return methods
   }
 
+  function getCmp() {
+    return cmp
+  }
+
   Vue.prototype[property] = Object.assign(show, {
     globalOptions,
+    getCmp,
     ...shorts(globalOptions)
   })
 }

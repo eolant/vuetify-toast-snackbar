@@ -78,3 +78,11 @@ this.$toast('Custom options', {
 
 this.$toast.custom('Custom short')
 ```
+
+### Get currently displayed Toast component
+
+```js
+let cmp = this.$toast.getCmp()
+cmp.message = 'Dynamic properties'
+cmp.close()
+```

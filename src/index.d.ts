@@ -31,6 +31,7 @@ interface VuetifyToastShow {
 }
 
 interface VuetifyToastMethods extends VuetifyToastShow {
+  getCmp: any
   [key: string]: VuetifyToastShow
 }
 
