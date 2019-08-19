@@ -16,12 +16,15 @@ export interface VuetifyToastObject {
   y?: string
   color?: string
   icon?: string
+  iconColor?: string
   classes?: string | object | Array<object | string>
   timeout?: number
   dismissable?: boolean
   multiLine?: boolean
   vertical?: boolean
   showClose?: boolean
+  closeText?: string
+  closeColor?: string
   queueable?: boolean
   shorts?: any
 }

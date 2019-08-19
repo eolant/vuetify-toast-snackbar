@@ -25,6 +25,7 @@ Vue.use(VuetifyToast, {
 	y: 'bottom', // default
 	color: 'info', // default
 	icon: 'info',
+	iconColor: '', // default
 	classes: [
 		'body-2'
 	],
@@ -34,6 +35,8 @@ Vue.use(VuetifyToast, {
 	vertical: false, // default
 	queueable: false, // default
 	showClose: false, // default
+	closeText: '', // default
+	closeColor: '', // default
 	shorts: {
 		custom: {
 			color: 'purple'

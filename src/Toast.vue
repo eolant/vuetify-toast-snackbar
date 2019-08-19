@@ -9,28 +9,34 @@
     :multi-line = "multiLine"
     :vertical = "vertical"
     v-model="active"
-    class="v-application vts__snackbar"
+    class="v-application vts"
     :class="classes"
     @click="dismiss"
+    role="alert"
   >
     <v-icon
       dark
       left
       v-if="!!icon"
-      class="vts__snackbar__icon"
+      class="vts__icon"
+      :color="iconColor"
     >
       {{ icon }}
     </v-icon>
 
-    <div class="vts__snackbar__message" v-html="message"></div>
+    <div class="vts__message" :class="{ 'vts__message--padded': showClose && !closeText }" v-html="message"></div>
 
     <v-btn
-      icon
-      class="vts__snackbar__close"
+      :icon="!closeText"
+      :text="!!closeText"
+      class="vts__close"
+      :class="{ 'vts__close--icon': !closeText }"
+      :color="closeColor"
       v-if="showClose"
       @click="close"
     >
-      <v-icon>close</v-icon>
+      <v-icon v-if="!closeText">close</v-icon>
+      <span v-if="!!closeText">{{ closeText }}</span>
     </v-btn>
   </v-snackbar>
 </template>
@@ -51,13 +57,20 @@ export default {
       default: 'info'
     },
     icon: {
-      type: String
+      type: String,
+      default: ''
+    },
+    iconColor: {
+      type: String,
+      default: ''
     },
     classes: {
-      type: [ String, Object, Array ]
+      type: [ String, Object, Array ],
+      default: ''
     },
     message: {
-      type: String
+      type: String,
+      default: ''
     },
     timeout: {
       type: Number,
@@ -78,6 +91,14 @@ export default {
     showClose: {
       type: Boolean,
       default: false
+    },
+    closeText: {
+      type: String,
+      default: ''
+    },
+    closeColor: {
+      type: String,
+      default: ''
     }
   },
 
@@ -114,45 +135,49 @@ export default {
 </script>
 
 <style>
-  .vts__snackbar {
+  .vts {
     max-width: none !important;
     width: auto !important;
   }
 
-  .vts__snackbar .v-snack__content {
+  .vts .v-snack__content {
     justify-content: flex-start;
   }
 
-  .vts__snackbar__icon {
+  .vts__icon {
     margin-right: 12px;
   }
 
-  .vts__snackbar__message {
+  .vts__message {
     margin-right: auto;
   }
 
-  .vts__snackbar__close {
-    margin: 0 -9px 0 24px !important;
+  .vts__close {
+    margin: 0 -8px 0 24px !important;
     justify-self: flex-end;
   }
 
-  .vts__snackbar.v-snack--vertical .vts__snackbar__icon {
+  .vts.v-snack--vertical .vts__icon {
     margin: 0 0 12px !important;
   }
 
-  .vts__snackbar.v-snack--vertical .v-snack__content {
-    padding-bottom: 24px !important;
+  .vts.v-snack--vertical .v-snack__content {
+    padding-bottom: 16px !important;
   }
 
-  .vts__snackbar.v-snack--vertical .vts__snackbar__message {
-    padding-top: 12px;
+  .vts.v-snack--vertical .vts__message--padded {
+    padding: 12px 0 0;
   }
 
-  .vts__snackbar.v-snack--vertical .vts__snackbar__icon + .vts__snackbar__message {
+  .vts.v-snack--vertical .vts__icon + .vts__message {
     padding-top: 0;
   }
 
-  .vts__snackbar.v-snack--vertical .vts__snackbar__close {
+  .vts.v-snack--vertical .vts__close {
+    margin: 12px 0 -8px !important;
+  }
+
+  .vts.v-snack--vertical .vts__close--icon {
     margin: 0 !important;
     position: absolute;
     right: 4px;
