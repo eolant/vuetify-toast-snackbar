@@ -35,7 +35,7 @@
       v-if="showClose"
       @click="close"
     >
-      <v-icon v-if="!closeText">close</v-icon>
+      <v-icon v-if="!closeText">$vuetify.icons.close</v-icon>
       <span v-if="!!closeText">{{ closeText }}</span>
     </v-btn>
   </v-snackbar>
