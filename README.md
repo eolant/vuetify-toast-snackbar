@@ -38,6 +38,7 @@ Vue.use(VuetifyToast, {
 	closeText: '', // default
 	closeIcon: 'close', // default
 	closeColor: '', // default
+	slot: [], //default
 	shorts: {
 		custom: {
 			color: 'purple'
@@ -81,6 +82,10 @@ this.$toast('Custom options', {
 })
 
 this.$toast.custom('Custom short')
+
+this.$toast(null, {
+	slot: [this.$createElement('button', ['Click here'])]
+})
 ```
 
 ### Get currently displayed Toast component

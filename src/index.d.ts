@@ -27,6 +27,7 @@ export interface VuetifyToastObject {
   closeIcon?: string
   closeColor?: string
   queueable?: boolean
+  slot?: Array<any>
   shorts?: any
 }
 

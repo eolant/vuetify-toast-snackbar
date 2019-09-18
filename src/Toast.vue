@@ -24,7 +24,10 @@
       {{ icon }}
     </v-icon>
 
-    <div class="vts__message" :class="{ 'vts__message--padded': showClose && !closeText }" v-html="message"></div>
+    <div class="vts__message" :class="{ 'vts__message--padded': showClose && !closeText }">
+      <div v-html="message"></div>
+      <slot></slot>
+    </div>
 
     <v-btn
       :icon="!closeText"

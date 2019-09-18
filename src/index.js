@@ -6,6 +6,11 @@ function init(Vue, globalOptions = {}) {
 
   function createCmp(options) {
     let component = new Vue(Toast)
+
+    if (options.slot) {
+      component.$slots.default = options.slot
+    }
+
     Object.assign(component, Vue.prototype[property].globalOptions, options)
     document.body.appendChild(component.$mount().$el)
 
