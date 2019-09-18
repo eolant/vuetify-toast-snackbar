@@ -36,6 +36,7 @@ Vue.use(VuetifyToast, {
 	queueable: false, // default
 	showClose: false, // default
 	closeText: '', // default
+	closeIcon: 'close', // default
 	closeColor: '', // default
 	shorts: {
 		custom: {

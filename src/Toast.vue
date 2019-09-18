@@ -35,7 +35,7 @@
       v-if="showClose"
       @click="close"
     >
-      <v-icon v-if="!closeText">close</v-icon>
+      <v-icon v-if="!closeText">{{ closeIcon }}</v-icon>
       <span v-if="!!closeText">{{ closeText }}</span>
     </v-btn>
   </v-snackbar>
@@ -95,6 +95,10 @@ export default {
     closeText: {
       type: String,
       default: ''
+    },
+    closeIcon: {
+      type: String,
+      default: 'close'
     },
     closeColor: {
       type: String,
