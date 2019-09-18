@@ -1,7 +1,7 @@
 import Toast from './Toast.vue'
 
 function init(Vue, globalOptions = {}) {
-  let cmp = null, queue = [], cmpEl = null
+  let cmp = null, queue = []
   const property = globalOptions.property || '$toast'
 
   function createCmp(options) {
