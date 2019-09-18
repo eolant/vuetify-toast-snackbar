@@ -5,14 +5,11 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <style>
-    body { padding: 10px; }
-  </style>
 </head>
 <body>
   <div id="app">
     <v-app>
-      <v-content>
+      <v-content class="pa-4">
         <h1>Vuetify Toast Snackbar Demo</h1>
         <v-btn @click="success('Hello')" color="primary">Show 'hello'</v-btn>
         <v-btn @click="error('Error')" color="primary">Show 'error'</v-btn>

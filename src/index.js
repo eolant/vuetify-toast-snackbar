@@ -1,7 +1,7 @@
 import Toast from './Toast.vue'
 
 function init(Vue, globalOptions = {}) {
-  let cmp = null, queue = []
+  let cmp = null, queue = [], cmpEl = null
   const property = globalOptions.property || '$toast'
 
   function createCmp(options) {
@@ -31,12 +31,15 @@ function init(Vue, globalOptions = {}) {
     cmp = createCmp(options)
     cmp.$on('statusChange', (isActive, wasActive) => {
       if (wasActive && !isActive) {
-        cmp = null
+        cmp.$nextTick(() => {
+          cmp.$destroy()
+          cmp = null
 
-        if (queue.length) {
-          let toast = queue.shift()
-          show(toast.message, toast.options)
-        }
+          if (queue.length) {
+            let toast = queue.shift()
+            show(toast.message, toast.options)
+          }
+        })
       }
     })
   }
