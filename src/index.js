@@ -1,17 +1,20 @@
 import Toast from './Toast.vue'
 
 function init(Vue, globalOptions = {}) {
-  let cmp = null, queue = []
+  let cmp = null
+  const queue = []
   const property = globalOptions.property || '$toast'
 
   function createCmp(options) {
-    let component = new Vue(Toast)
+    const component = new Vue(Toast)
+    const componentOptions = { ...Vue.prototype[property].globalOptions, ...options }
 
-    if (options.slot) {
-      component.$slots.default = options.slot
+    if (componentOptions.slot) {
+      component.$slots.default = componentOptions.slot
+      delete componentOptions.slot
     }
 
-    Object.assign(component, Vue.prototype[property].globalOptions, options)
+    Object.assign(component, componentOptions)
     document.body.appendChild(component.$mount().$el)
 
     return component
