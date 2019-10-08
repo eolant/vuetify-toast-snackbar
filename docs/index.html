@@ -14,6 +14,7 @@
         <v-btn @click="success('Hello')" color="primary">Show 'hello'</v-btn>
         <v-btn @click="error('Error')" color="primary">Show 'error'</v-btn>
         <v-btn @click="showToast('This is an information.', { timeout: 10000, icon: 'info', dismissable: false, showClose: true })" color="primary">Show toast for 10 sec</v-btn>
+        <v-btn @click="clearQueue" color="primary">Clear queue</v-btn>
         <br>
         <br>
         <pre>
@@ -45,16 +46,19 @@
       el: '#app',
       vuetify: new Vuetify(),
       methods: {
-        success: function(text) {
+        success: function (text) {
           this.$toast.success(text, {
             queueable: true
           });
         },
-        error: function(text) {
+        error: function (text) {
           this.$toast.error(text);
         },
-        showToast: function(text, opt) {
+        showToast: function (text, opt) {
           this.$toast(text, opt);
+        },
+        clearQueue: function () {
+          this.$toast.clearQueue();
         }
       }
     });

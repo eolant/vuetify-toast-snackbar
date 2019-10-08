@@ -22,7 +22,7 @@ function init(Vue, globalOptions = {}) {
 
   function show(message, options = {}) {
     if (cmp) {
-      let isQueueable = options.queueable !== undefined ? options.queueable : globalOptions.queueable
+      const isQueueable = options.queueable !== undefined ? options.queueable : globalOptions.queueable
 
       if (isQueueable) {
         queue.push({ message, options })
@@ -44,7 +44,7 @@ function init(Vue, globalOptions = {}) {
           cmp = null
 
           if (queue.length) {
-            let toast = queue.shift()
+            const toast = queue.shift()
             show(toast.message, toast.options)
           }
         })
@@ -54,7 +54,7 @@ function init(Vue, globalOptions = {}) {
 
   function shorts(options) {
     const colors = ['success', 'info', 'error', 'warning']
-    let methods = {}
+    const methods = {}
 
     colors.forEach(color => {
       methods[color] = (message, options) => show(message, { color, ...options })
@@ -62,7 +62,7 @@ function init(Vue, globalOptions = {}) {
 
     if (options.shorts) {
       for (let key in options.shorts) {
-        let localOptions = options.shorts[key]
+        const localOptions = options.shorts[key]
         methods[key] = (message, options) => show(message, { ...localOptions, ...options })
       }
     }
@@ -74,9 +74,14 @@ function init(Vue, globalOptions = {}) {
     return cmp
   }
 
+  function clearQueue() {
+    return queue.splice(0, queue.length)
+  }
+
   Vue.prototype[property] = Object.assign(show, {
     globalOptions,
     getCmp,
+    clearQueue,
     ...shorts(globalOptions)
   })
 }

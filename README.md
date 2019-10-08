@@ -95,3 +95,9 @@ let cmp = this.$toast.getCmp()
 cmp.message = 'Dynamic properties'
 cmp.close()
 ```
+
+### Clear Toasts queue
+
+```js
+let queue = this.$toast.clearQueue()
+```
