@@ -12,7 +12,6 @@
     class="v-application vts"
     :class="classes"
     @click="dismiss"
-    role="alert"
   >
     <v-icon
       dark
