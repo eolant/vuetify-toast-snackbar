@@ -45,7 +45,8 @@ Vue.use(VuetifyToast, {
 		}
 	},
 	property: '$toast' // default
-})
+},
+'body') // default
 ```
 
 ### Vue loader (e.g. Nuxt.js)

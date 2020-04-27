@@ -1,6 +1,6 @@
 import Toast from './Toast.vue'
 
-function init(Vue, globalOptions = {}) {
+function init(Vue, globalOptions = {}, attach = 'body') {
   let cmp = null
   const queue = []
   const property = globalOptions.property || '$toast'
@@ -15,7 +15,7 @@ function init(Vue, globalOptions = {}) {
     }
 
     Object.assign(component, componentOptions)
-    document.body.appendChild(component.$mount().$el)
+    document.querySelector(attach).appendChild(component.$mount().$el)
 
     return component
   }
