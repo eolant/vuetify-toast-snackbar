@@ -29,6 +29,7 @@ export interface VuetifyToastObject {
   queueable?: boolean
   slot?: Array<any>
   shorts?: any
+  attach: string
 }
 
 interface VuetifyToastShow {
