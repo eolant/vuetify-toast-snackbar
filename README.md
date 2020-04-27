@@ -44,7 +44,8 @@ Vue.use(VuetifyToast, {
 			color: 'purple'
 		}
 	},
-	property: '$toast' // default
+	property: '$toast', // default
+	attach: 'body' // default
 })
 ```
 
