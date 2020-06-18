@@ -1,12 +1,15 @@
 import Toast from './Toast.vue'
 
-function init(Vue, globalOptions = {}) {
+function install(Vue, globalOptions = {}) {
   let cmp = null
   const queue = []
   const property = globalOptions.property || '$toast'
 
   function createCmp(options) {
     const component = new Vue(Toast)
+    component.$vuetify.application = {
+      bar: 100
+    }
     const componentOptions = { ...Vue.prototype[property].globalOptions, ...options }
 
     if (componentOptions.slot) {
@@ -41,6 +44,7 @@ function init(Vue, globalOptions = {}) {
       if (wasActive && !isActive) {
         cmp.$nextTick(() => {
           cmp.$destroy()
+          cmp.$el.parentNode.removeChild(cmp.$el)
           cmp = null
 
           if (queue.length) {
@@ -86,8 +90,10 @@ function init(Vue, globalOptions = {}) {
   })
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(init)
-}
+function ToastSnackbar() {
 
-export default init
+}
+ToastSnackbar.install = install
+
+
+export default ToastSnackbar
