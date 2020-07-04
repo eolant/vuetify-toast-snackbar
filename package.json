@@ -46,5 +46,12 @@
   "peerDependencies": {
     "vue": "*",
     "vuetify": "*"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jaredhan418/vuetify-toast-snackbar/issues"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {}
 }
