@@ -33,7 +33,6 @@
       <v-btn
         :icon="!closeText"
         :text="!!closeText"
-        class="vts__close"
         :class="{ 'vts__close--icon': !closeText }"
         :color="closeColor"
         v-bind="attrs"
