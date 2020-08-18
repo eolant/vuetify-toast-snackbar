@@ -97,5 +97,8 @@ function ToastSnackbar() {
 }
 ToastSnackbar.install = install
 
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(ToastSnackbar)
+}
 
 export default ToastSnackbar
