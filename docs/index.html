@@ -3,6 +3,7 @@
 <head>
   <title>Vuetify Toast Snackbar Demo</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
@@ -56,7 +57,7 @@
           this.$toast.error(text);
         },
         showToast: function (text, opt) {
-          this.$toast(text, opt);
+          this.$toast(text, opt)
         },
         clearQueue: function () {
           this.$toast.clearQueue();
