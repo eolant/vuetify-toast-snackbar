@@ -65,7 +65,13 @@ Vue.use(Vuetify, {
   }
 })
 
-Vue.use(VuetifyToast)
+const veutifyObj = new Vuetify({
+    theme: { dark: true },
+});
+
+Vue.use(VuetifyToast, { $vuetify: veutifyObj.framework })
+
+export default veutifyObj;
 ```
 
 ### Call
