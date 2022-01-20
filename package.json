@@ -1,6 +1,6 @@
 {
   "name": "vuetify-toast-snackbar-ng",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Basic Vue toast service that uses Vuetify Snackbar component for Vuetify 2.3+",
   "author": "hanjiawei",
   "license": "MIT",
