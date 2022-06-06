@@ -14,6 +14,7 @@ export interface VuetifyToastPlugin {
 export interface VuetifyToastObject {
   x?: string
   y?: string
+  centered?: boolean
   color?: string
   icon?: string
   iconColor?: string

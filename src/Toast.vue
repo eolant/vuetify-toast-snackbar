@@ -6,6 +6,7 @@
     :top="y === 'top'"
     :left="x === 'left'"
     :right="x === 'right'"
+    :centered="centered"
     :multi-line = "multiLine"
     :vertical = "vertical"
     v-model="active"
@@ -56,6 +57,10 @@ export default {
     y: {
       type: String,
       default: 'bottom'
+    },
+    centered: {
+      type: Boolean,
+      default: false
     },
     color: {
       type: String,
