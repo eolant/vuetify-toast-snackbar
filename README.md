@@ -1,24 +1,20 @@
-# Vuetify Toast Snackbar
+# Vuetify Toast Snackbar for Vuetify 2.3+
 
 > Basic Vue toast service with queue support that uses [Vuetify](https://github.com/vuetifyjs/vuetify) Snackbar component.
-> Inspired by https://github.com/pzs/vuetify-toast
+> Update from https://github.com/eolant/vuetify-toast-snackbar
 
 ## Installation
 
 ```bash
-npm install vuetify-toast-snackbar
+npm install vuetify-toast-snackbar-ng
 ```
-
-## Demo
-
-Demo: https://eolant.github.io/vuetify-toast-snackbar
 
 ## Usage
 
 ### Bundler (Webpack, Rollup)
 
 ```js
-import VuetifyToast from 'vuetify-toast-snackbar'
+import VuetifyToast from 'vuetify-toast-snackbar-ng'
 
 Vue.use(VuetifyToast, {
 	x: 'right', // default
@@ -55,7 +51,7 @@ Update `plugins/vuetify.js`
 ```js
 import Vue from 'vue'
 import Vuetify, { VSnackbar, VBtn, VIcon } from 'vuetify/lib'
-import VuetifyToast from 'vuetify-toast-snackbar'
+import VuetifyToast from 'vuetify-toast-snackbar-ng'
 
 Vue.use(Vuetify, {
   components: {

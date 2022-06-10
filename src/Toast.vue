@@ -6,6 +6,7 @@
     :top="y === 'top'"
     :left="x === 'left'"
     :right="x === 'right'"
+    :centered="centered"
     :multi-line = "multiLine"
     :vertical = "vertical"
     v-model="active"
@@ -14,33 +15,35 @@
     @click="dismiss"
     role="alert"
   >
-    <v-icon
-      dark
-      left
-      v-if="!!icon"
-      class="vts__icon"
-      :color="iconColor"
-    >
-      {{ icon }}
-    </v-icon>
 
     <div class="vts__message" :class="{ 'vts__message--padded': showClose && !closeText }">
-      <div v-html="message"></div>
+      <v-icon
+        dark
+        left
+        v-if="!!icon"
+        class="vts__icon"
+        :color="iconColor"
+      >
+        {{ icon }}
+      </v-icon>
+      <span v-html="message"></span>
       <slot></slot>
     </div>
 
-    <v-btn
-      :icon="!closeText"
-      :text="!!closeText"
-      class="vts__close"
-      :class="{ 'vts__close--icon': !closeText }"
-      :color="closeColor"
-      v-if="showClose"
-      @click="close"
-    >
-      <v-icon v-if="!closeText">{{ closeIcon }}</v-icon>
-      <span v-if="!!closeText">{{ closeText }}</span>
-    </v-btn>
+    <template v-slot:action="{ attrs }">
+      <v-btn
+        :icon="!closeText"
+        :text="!!closeText"
+        :class="{ 'vts__close--icon': !closeText }"
+        :color="closeColor"
+        v-bind="attrs"
+        v-if="showClose"
+        @click="close"
+      >
+        <v-icon v-if="!closeText">{{ closeIcon }}</v-icon>
+        <span v-if="!!closeText">{{ closeText }}</span>
+      </v-btn>
+    </template>
   </v-snackbar>
 </template>
 
@@ -54,6 +57,10 @@ export default {
     y: {
       type: String,
       default: 'bottom'
+    },
+    centered: {
+      type: Boolean,
+      default: false
     },
     color: {
       type: String,
