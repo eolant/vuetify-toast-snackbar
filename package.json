@@ -39,7 +39,7 @@
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^5.2.3",
-    "rollup-plugin-vue": "^5.0.1",
+    "rollup-plugin-vue": "^6.0.0",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
